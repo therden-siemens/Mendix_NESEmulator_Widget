@@ -1,0 +1,33 @@
+{
+  "name": "nesemulatorwidget",
+  "widgetName": "NESEmulatorWidget",
+  "version": "1.0.0",
+  "description": "A new try of an emulator widget for NES using the jsNES library and ES6 as language.",
+  "copyright": "2020 Mendix Technology BV",
+  "author": "Tim Herden",
+  "engines": {
+    "node": ">=12"
+  },
+  "config": {
+    "projectPath": "../..//",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": "3000"
+  },
+  "packagePath": "mendix",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^9.0.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "jsnes": "^1.2.1"
+  }
+}

@@ -1,0 +1,82 @@
+/*
+Place your custom CSS here
+*/
+
+:root {
+
+    --emulator-container-width: 873px;
+    --emulator-container-height: calc(var(--emulator-container-width) * 0.640591966173362);
+    --emulator-background-width: calc(var(--emulator-container-width) - 10px);
+    --emulator-background-height: calc(var(--emulator-container-height) - 10px);
+
+}
+
+
+.emulator-outer-frame {
+
+    text-align: center;
+    background: white;
+    
+}
+
+.emulator-container {
+    
+    display:inline-block;
+    width: var(--emulator-container-width); 
+    height:var(--emulator-container-height);
+    margin: 0 auto; 
+    background: black; 
+    position:relative; 
+    border:5px solid black; 
+    border-radius: 10px; 
+    box-shadow: 0 5px 50px #333;
+}
+
+
+.emulator-widget {
+    position: relative;
+    z-index: 10;
+    /*change the following value if the emulator canvas is not centered inside the background (TV screen)*/
+    width: 60%;
+    height: 70%;
+    /*margin-top: 40px //absolute margin in px fits well if canvas height is 303px;*/
+    margin-top: 9%;
+    /* margin-bottom: 0px;
+    margin-left: -100px; absolute margin in px fits well if canvas width is 473px; */
+    margin-left: -21%;
+    /* padding-top: 0px;
+    padding-left: 29px;
+    padding-right: 50px; */
+
+}
+
+.emulator-widget-noback {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    
+}
+
+.emulator-background {
+
+    /* position: relative;
+    display: block;        
+    max-width: 480px;
+    max-height: 303px;
+    width: auto;
+    height: auto;
+    opacity: 0.5;
+    z-index: 20; */
+
+    position: absolute;
+    opacity: 1;
+    z-index: 20;
+     
+}
+
+.emulator-background > img {
+
+    min-width: var(--emulator-background-width);
+    min-height: var(--emulator-background-height);
+
+}

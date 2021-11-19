@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.nesemulatorwidget.NESEmulatorWidget" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>NESEmulator Widget</name>
+    <description>A new try of an emulator widget for NES using the jsNES library and ES6 as language.</description>
+    <icon>
+        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
+    </icon>
+    <properties>
+        <propertyGroup caption="General">
+            <propertyGroup caption="Source">
+
+                <property key="file" type="file" required="true">
+                    <caption>ROM File</caption>
+                    <description>Provide an entity of generalization System.File</description>
+                </property>
+
+                <property key="filePath" type="attribute">
+                    <caption>Absolute path attribute</caption>
+                    <description>The attribute containing the absolute path to the ROM fiel entity, e.g. http://localhost:8080/file?guid=562949953421413</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+
+            </propertyGroup>
+
+            <propertyGroup caption="Appearance">
+
+                <property key="showBackground" type="boolean" defaultValue="true">
+                    <caption>Show Background</caption>
+                    <description>Whether the emulator player is embedded in an image of a retro CRT monitor.</description>
+                </property>
+         
+                <property key="widgetWidth" type="integer" defaultValue="256">
+                    <caption>Width</caption>
+                    <description>Width of emulator canvas in pixels.</description>
+                </property>
+                
+                <property key="widgetHeight" type="integer" defaultValue="240">
+                    <caption>Heigth</caption>
+                    <description>Height of emulator canvas in pixels.</description>
+                </property>
+ 
+            </propertyGroup>
+
+            <propertyGroup caption="Controls">
+
+                <property key="buttonLeft" type="enumeration" defaultValue="keyCursorLeft">
+                    <caption>Key for 'left'</caption>
+                    <description>Define the key used to emulate button gamepad left.</description>
+                    <enumerationValues>
+                        <enumerationValue key="keyCursorLeft">Cursor Left</enumerationValue>
+                        <enumerationValue key="keyA">Key A</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="buttonRight" type="enumeration" defaultValue="keyCursorRight">
+                    <caption>Key for 'right'</caption>
+                    <description>Define the key used to emulate button gamepad right.</description>
+                    <enumerationValues>
+                        <enumerationValue key="keyCursorRight">Cursor Right</enumerationValue>
+                        <enumerationValue key="keyD">Key D</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="buttonUp" type="enumeration" defaultValue="keyCursorUp">
+                    <caption>Key for 'up'</caption>
+                    <description>Define the key used to emulate button gamepad up.</description>
+                    <enumerationValues>
+                        <enumerationValue key="keyCursorUp">Cursor Up</enumerationValue>
+                        <enumerationValue key="keyW">Key W</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="buttonDown" type="enumeration" defaultValue="keyCursorDown">
+                    <caption>Key for 'down'</caption>
+                    <description>Define the key used to emulate button gamepad down.</description>
+                    <enumerationValues>
+                        <enumerationValue key="keyCursorDown">Cursor Down</enumerationValue>
+                        <enumerationValue key="keyS">Key S</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="buttonA" type="enumeration" defaultValue="keyA">
+                    <caption>Key for 'A'</caption>
+                    <description>Define the key used to emulate button gamepad A.</description>
+                    <enumerationValues>
+                        <enumerationValue key="keyA">Key A</enumerationValue>
+                        <enumerationValue key="keyK">Key K</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="buttonB" type="enumeration" defaultValue="keyS">
+                    <caption>Key for 'B'</caption>
+                    <description>Define the key used to emulate button gamepad B.</description>
+                    <enumerationValues>
+                        <enumerationValue key="keyS">Key S</enumerationValue>
+                        <enumerationValue key="keyL">Key L</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="buttonStart" type="enumeration" defaultValue="keyEnter">
+                    <caption>Key for 'start'</caption>
+                    <description>Define the key used to emulate button gamepad start.</description>
+                    <enumerationValues>
+                        <enumerationValue key="keyEnter">Enter / return</enumerationValue>
+                        <enumerationValue key="keyG">Key G</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="buttonSelect" type="enumeration" defaultValue="keyTab">
+                    <caption>Key for 'select'</caption>
+                    <description>Define the key used to emulate button gamepad select.</description>
+                    <enumerationValues>
+                        <enumerationValue key="keyTab">Tab</enumerationValue>
+                        <enumerationValue key="keyH">Key H</enumerationValue>
+                    </enumerationValues>
+                </property>
+ 
+            </propertyGroup>
+
+        </propertyGroup>
+
+        
+    </properties>
+</widget>
